@@ -10,7 +10,18 @@ class CenterController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        if(!Zend_Auth::getInstance()->hasIdentity())
+        {
+            $this->_helper->redirector('Index','index');
+        }
+        else{
+            
+            $centers = new Application_Model_DbTable_Centers();
+            $centerDetails = $centers->getCenterDetails();
+            $centerDetails = $centerDetails->toArray();
+            $this->view->centerDetails = $centerDetails;
+        }//End else
+        
     }
 
 

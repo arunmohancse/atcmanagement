@@ -10,8 +10,16 @@
               <?php if(Zend_Auth::getInstance()->hasIdentity())
                     { ?>
                          <a href="/index/logout" style="text-decoration: none;text-align: left;color:#FFFFFF;">Logout</a>
-              <?php } ?>
-                 </div>
+              
+            </div>
+            <div id="main-menu" align="left" style="position:absolute;">
+                <span style="color: #FFFFFF;">
+                    <a href="/center" style="color: #FFFFFF;">Centers</a>
+                    <a href="/student" style="color: #FFFFFF;">Students</a>
+                    <a href="/certificate" style="color: #FFFFFF;">Certificates</a>
+                </span>    
+            </div>
+             <?php } ?>
             <br \>
             <h1 style="font-size:40px;">ATC management </h1>
             <br \>

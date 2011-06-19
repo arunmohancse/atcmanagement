@@ -1,4 +1,27 @@
 <br /><br />
 <div id="view-content">
-	<p>View script for controller <b>Center</b> and script/action name <b>index</b></p>
+    <div style="">
+        <b><span>atccode&nbsp;</span><span>district&nbsp;</span><span>state&nbsp;</span><span>pincode&nbsp;</span>
+        <span>categoryname&nbsp;</span></b>
+    </div>
+    <br />
+	<?php
+            if($this->centerDetails)
+            {
+                foreach ($this->centerDetails AS $centerDetail)
+                {
+                       //echo $centerDetail['id'] . "&nbsp";
+                       echo $centerDetail['atccode'] . "&nbsp;";
+                       echo $centerDetail['district'] . "&nbsp;";
+                       echo $centerDetail['state'] . "&nbsp;";
+                       echo $centerDetail['pincode'] . "&nbsp;";
+                       echo $centerDetail['categoryname'] . "&nbsp;";
+                       echo "<br />";
+                }
+                      
+            }
+            else{
+                 echo "There is no entry for centers";
+            }
+        ?>
 </div>
