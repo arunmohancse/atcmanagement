@@ -6,12 +6,11 @@
     </head>
     <body>
         <header style="color:#FFFFFF;">
-            <div align="right" style="position:absolute;right: 100px;">
-              <?php if(Zend_Auth::getInstance()->hasIdentity())
+            <?php if(Zend_Auth::getInstance()->hasIdentity())
                     { ?>
-                         <a href="/index/logout" style="text-decoration: none;text-align: left;color:#FFFFFF;">Logout</a>
-              
-            </div>
+            <div align="right" style="position:absolute;right: 100px;">
+                 <a href="/index/logout" style="text-decoration: none;text-align: left;color:#FFFFFF;">Logout</a>
+             </div>
             <div id="main-menu" align="left" style="position:absolute;">
                 <span style="color: #FFFFFF;">
                     <a href="/center" style="color: #FFFFFF;">Centers</a>
