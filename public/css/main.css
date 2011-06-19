@@ -40,3 +40,4 @@ footer span a {color:#333}
 section {padding: 15px;min-height: 450px;}
 .login-form{border: #52C6D8 thick double;min-width: 400px;width: 400px;} 
 .error-page-box{min-width: 600px;padding: 10px;color:#A84ADB;font-size:32px;} 
+a{text-decoration: none;}
