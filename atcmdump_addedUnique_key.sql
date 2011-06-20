@@ -27,8 +27,7 @@ CREATE TABLE `center_category` (
   `code` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `code_2` (`code`),
-  KEY `code` (`code`)
+  UNIQUE KEY `code` (`code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -49,11 +48,8 @@ CREATE TABLE `centers` (
   `registation_date` timestamp NULL DEFAULT NULL,
   `expiry_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `atccode_2` (`atccode`),
-  UNIQUE KEY `atccode_3` (`atccode`),
-  KEY `id` (`id`),
-  KEY `atccode` (`atccode`),
-  KEY `category_code` (`category_code`),
+  UNIQUE KEY `atccode` (`atccode`),
+  UNIQUE KEY `category_code` (`category_code`),
   CONSTRAINT `centers_ibfk_1` FOREIGN KEY (`category_code`) REFERENCES `center_category` (`code`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -77,8 +73,7 @@ CREATE TABLE `certificates` (
   `issue_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `serial_no` (`serial_no`),
-  UNIQUE KEY `registration_no_2` (`registration_no`),
-  KEY `registration_no` (`registration_no`),
+  UNIQUE KEY `registration_no` (`registration_no`),
   CONSTRAINT `certificates_ibfk_1` FOREIGN KEY (`registration_no`) REFERENCES `students` (`registration_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -101,10 +96,8 @@ CREATE TABLE `students` (
   `registration_fee` int(11) DEFAULT NULL,
   `join_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `atccode_2` (`atccode`),
-  UNIQUE KEY `registration_no_2` (`registration_no`),
-  KEY `atccode` (`atccode`),
-  KEY `registration_no` (`registration_no`),
+  UNIQUE KEY `atccode` (`atccode`),
+  UNIQUE KEY `registration_no` (`registration_no`),
   CONSTRAINT `students_ibfk_1` FOREIGN KEY (`atccode`) REFERENCES `centers` (`atccode`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -133,4 +126,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-06-20 15:05:06
+-- Dump completed on 2011-06-20 16:58:03
