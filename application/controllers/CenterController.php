@@ -24,6 +24,14 @@ class CenterController extends Zend_Controller_Action
         
     }
 
+    public function addcenterAction()
+    {
+        $form = new Application_Form_Addcenter();
+        $this->view->form = $form;
+    }
+
 
 }
+
+
 
