@@ -37,6 +37,24 @@ class Application_Form_Addcenter extends Zend_Form
         $atcExpDate->setLabel('ExpDate');
         $this->addElement($atcExpDate);
 
+
+        
+         /**
+          * Starting Decorators
+          */
+        $this->setElementDecorators(array(
+            'ViewHelper'
+            ));
+
+        /**
+         *
+         * the above form was in the view script "home/index.phtml",
+         * you could then attach it to your form as follows:
+         *
+         */
+          $this->setDecorators(array(
+          array('ViewScript', array('script' => 'center/addcenter.phtml'))));
+
     }
 
 

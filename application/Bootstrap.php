@@ -11,5 +11,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
          Zend_Registry::set('db',$db);
      }
 
+     protected function _initPath(){
+         $this->bootstrap('view');
+         $view = $this->getResource('view');
+         $view->addHelperPath(APPLICATION_PATH.'/views/helpers','Application_View_Helper');
+     }
+
 }
 
