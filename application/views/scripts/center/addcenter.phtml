@@ -3,19 +3,15 @@
 <h2>Enter Details </h2>
 <?php
     //echo $this->form;
-      echo "<div><label>ATC code      :</label> ".$this->form->atcCode ."</div>";
-      echo "<label>ATC Name      :</label> ".$this->form->atcName . "<br \>";
-      echo "<label>District      :</label> ".$this->form->atcDistrict . "<br \>";
-      echo "<label>State         :</label> ".$this->form->atcState . "<br \>";
-      echo "<label>PIN code      :</label> ".$this->form->atcPincode . "<br \>";
-      echo "<label>Category code :</label> ".$this->form->atcCategoryCode . "<br \>";
-
-      //echo $this->date();
+      echo "<div class=form-elmts><label>ATC code      :</label> ".$this->form->atcCode ."</div>";
+      echo "<div class=form-elmts><label>ATC Name      :</label> ".$this->form->atcName ."</div>";
+      echo "<div class=form-elmts><label>District      :</label> ".$this->form->atcDistrict ."</div>";
+      echo "<div class=form-elmts><label>State         :</label> ".$this->form->atcState ."</div>";
+      echo "<div class=form-elmts><label>PIN code      :</label> ".$this->form->atcPincode ."</div>";
+      echo "<div class=form-elmts><label>Category code :</label> ".$this->form->atcCategoryCode ."</div>";
 ?>
-
-
-      <label>Registration Date :</label>
-      <?php echo $this->dateComboBox('reg');?><br \>
-      <label>Expiry Date :</label>
-      <?php echo $this->dateComboBox('exp');?>
+      <div class=form-elmts><label>Registration Date :</label>
+      <?php echo $this->dateComboBox('reg');?></div>
+      <div class=form-elmts><label>Expiry Date :</label>
+      <?php echo $this->dateComboBox('exp');?></div>
 </div>

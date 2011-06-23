@@ -1,28 +1,32 @@
 <div id="view-content">
     <a href="/center/addcenter">Add a new center</a>
     <br><br>
-    <div style="">
-        <b><span>atccode&nbsp;</span><span>district&nbsp;</span><span>state&nbsp;</span><span>pincode&nbsp;</span>
-        <span>categoryname&nbsp;</span></b>
-    </div>
-    <br />
-	<?php
-            if($this->centerDetails)
-            {
-                foreach ($this->centerDetails AS $centerDetail)
-                {
-                       //echo $centerDetail['id'] . "&nbsp";
-                       echo $centerDetail['atccode'] . "&nbsp;";
-                       echo $centerDetail['district'] . "&nbsp;";
-                       echo $centerDetail['state'] . "&nbsp;";
-                       echo $centerDetail['pincode'] . "&nbsp;";
-                       echo $centerDetail['categoryname'] . "&nbsp;";
-                       echo "<br />";
-                }
+    <div class="center-list">
+      <div class="list-head">
+          <div style="min-width: 65px;">atccode</div><div style="min-width: 100px;">district</div><div style="min-width: 100px;">state</div><div style="min-width: 65px;">pincode</div>
+          <div style="min-width: 100px;">category</div>
+      </div>
+      <br />
+      <div class="list-content">
+	  <?php
+              if($this->centerDetails)
+              {
+                  foreach ($this->centerDetails AS $centerDetail)
+                  {
+                         //echo $centerDetail['id'] . "&nbsp";
+                         echo "<div style=\"min-width: 65px;\">".$centerDetail['atccode'] . "</div>";
+                         echo "<div style=\"min-width: 100px;\">".$centerDetail['district'] . "</div>";
+                         echo "<div style=\"min-width: 100px;\">".$centerDetail['state'] . "</div>";
+                         echo "<div style=\"min-width: 65px;\">".$centerDetail['pincode'] . "</div>";
+                         echo "<div style=\"min-width: 100px;\">".$centerDetail['categoryname'] . "</div>";
+                         echo "<br />";
+                  }
                       
-            }
-            else{
-                 echo "There is no entry for centers";
-            }
-        ?>
+              }
+              else{
+                   echo "There is no entry for centers";
+              }
+          ?>
+       </div>
+    </div>
 </div>

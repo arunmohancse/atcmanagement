@@ -41,5 +41,14 @@ section {padding: 15px;min-height: 450px;}
 .login-form{border: #52C6D8 thick double;min-width: 400px;width: 400px;} 
 .error-page-box{min-width: 600px;padding: 10px;color:#A84ADB;font-size:32px;} 
 a{text-decoration: none;}
+.details-form { display: inline-block; float:left;}
 .details-form input[type="text"]{}
 .details-form label{min-width:200px; float:left;}
+.details-form .form-elmts{padding: 5px 2px;}
+
+/*List center details*/
+.center-list{display: inline-block;}
+.list-head {display: inline-block;padding: 10px 0px 10px 0px;  background-color: #C0D9F7;}
+.list-head div{display: inline-block; min-width: 100px; text-align: center;}
+.list-content{display: inline-block;}
+.list-content div{display: inline-block; min-width: 100px;padding: 0px 0px 0px 5px;background-color:#D5DFED; margin: 1px 0px 2px 0px;}
