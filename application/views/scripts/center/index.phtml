@@ -1,25 +1,41 @@
 <div id="view-content">
     <a href="/center/addcenter">Add a new center</a>
+    <label>Search Details :</label><input type="text" name="searchQuery" id="search-query">
+    <select>
+        <option value="1">ATC code</option>
+        <option value="2">Center Name</option>
+    </select>
+    <input type="submit" name="searchSubmit" id="search-submit" value="Search">
     <br><br>
     <div class="center-list">
       <div class="list-head">
-          <div style="min-width: 65px;">atccode</div><div style="min-width: 100px;">district</div><div style="min-width: 100px;">state</div><div style="min-width: 65px;">pincode</div>
-          <div style="min-width: 100px;">category</div>
+          <div style="width: 65px;">atccode</div>
+          <div style="width: 100px;">Name</div>
+          <div style="width: 180px;">Address</div>
+          <div style="width: 100px;">district</div>
+          <div style="width: 100px;">state</div>
+          <div style="width: 65px;">pincode</div>
+          <div style="width: 100px;">category</div>
+          <div style="width: 120px;">Registration Date</div>
+          <div style="width: 120px;">Contact Numbers</div>
       </div>
-      <br />
-      <div class="list-content">
+      
 	  <?php
               if($this->centerDetails)
               {
                   foreach ($this->centerDetails AS $centerDetail)
                   {
-                         //echo $centerDetail['id'] . "&nbsp";
-                         echo "<div style=\"min-width: 65px;\">".$centerDetail['atccode'] . "</div>";
-                         echo "<div style=\"min-width: 100px;\">".$centerDetail['district'] . "</div>";
-                         echo "<div style=\"min-width: 100px;\">".$centerDetail['state'] . "</div>";
-                         echo "<div style=\"min-width: 65px;\">".$centerDetail['pincode'] . "</div>";
-                         echo "<div style=\"min-width: 100px;\">".$centerDetail['categoryname'] . "</div>";
-                         echo "<br />";
+                         echo "<div class=\"list-content\">";
+                             echo "<div style=\"width: 65px;\">".$centerDetail['code'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$centerDetail['name'] . "</div>";
+                             echo "<div style=\"width: 180px;\">".$centerDetail['address'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$centerDetail['district'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$centerDetail['state'] . "</div>";
+                             echo "<div style=\"width: 65px;\">".$centerDetail['pincode'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$centerDetail['categoryname'] . "</div>";
+                             echo "<div style=\"width: 120px;\">".$centerDetail['registration_date'] . "</div>";
+                             echo "<div style=\"width: 120px;\">".$centerDetail['contact_number1'] . "</div>";
+                         echo "</div>";
                   }
                       
               }
@@ -27,6 +43,6 @@
                    echo "There is no entry for centers";
               }
           ?>
-       </div>
+       
     </div>
 </div>

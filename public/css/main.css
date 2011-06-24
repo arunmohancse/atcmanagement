@@ -37,6 +37,7 @@ footer {text-align:center;height:50px;overflow:hidden;background-color: #486A9E;
 footer span {color: #111;font:12px/20px Arial, Helvetica, sans-serif;padding-top: 15px;display:block}
 footer span a {color:#333}
 /*section*/
+body{font-family: arial; font-size: 13px;}
 section {padding: 15px;min-height: 450px;}
 .login-form{border: #52C6D8 thick double;min-width: 400px;width: 400px;} 
 .error-page-box{min-width: 600px;padding: 10px;color:#A84ADB;font-size:32px;} 
@@ -46,9 +47,12 @@ a{text-decoration: none;}
 .details-form label{min-width:200px; float:left;}
 .details-form .form-elmts{padding: 5px 2px;}
 
+/*Menu*/
+.menu:hover{background-color: #818CEF;}
 /*List center details*/
-.center-list{display: inline-block;}
-.list-head {display: inline-block;padding: 10px 0px 10px 0px;  background-color: #C0D9F7;}
-.list-head div{display: inline-block; min-width: 100px; text-align: center;}
-.list-content{display: inline-block;}
-.list-content div{display: inline-block; min-width: 100px;padding: 0px 0px 0px 5px;background-color:#D5DFED; margin: 1px 0px 2px 0px;}
+.center-list{display: inline-block;background-color:#DEECF2; border:1px #848F96 solid; border-right: 0; border-bottom:0 }
+.list-head { background-color: #56B4F7;position:relative; overflow:hidden; color: #fff; font-weight: bold; text-transform: capitalize;}
+.list-head div{display:block; text-align: left; float: left; padding: 5px; border-right:1px #848F96 solid}
+.list-content{ border-bottom:1px #848F96 solid;}
+.list-content div{display: inline-block; padding: 5px; border-right:1px #848F96 solid;text-transform: capitalize;}
+.list-content:hover{background-color:#C7E7FC;}
