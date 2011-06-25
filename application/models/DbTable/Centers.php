@@ -50,7 +50,7 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
     {
         $select = $this->select('code')->where('code=?',$code);
         $codeStatus = $this->fetchRow($select);
-        if($codeStatus){
+        if($codeStatus OR $code==''){
             
             $status = 'INVALID_PRIMARYKEY'; 
             return($status);
