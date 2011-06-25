@@ -44,6 +44,7 @@ section {padding: 15px;min-height: 450px;}
 a{text-decoration: none;}
 
 /*Center Form*/
+#addcenter-leftblock{display:inline-block;min-width: 200px;float: left;}
 .center-details-form { display: inline-block; float:left;padding:15px 10px; }
 .center-details-form input[type="text"]{}
 .center-details-form label{min-width:200px; float:left;}
@@ -70,6 +71,7 @@ a{text-decoration: none;}
                background-color: #0794ED;}
 #list-category-close{text-align: right}
 #list-category-content{}
+
 
 
 
