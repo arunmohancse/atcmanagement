@@ -30,7 +30,7 @@ textarea {overflow:auto}
 /* GLOBAL */
 html {min-width:1088px}
 body {font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1em;color:#000}
-header {position:relative;height:50px;background-color: #3B5998;text-align:center;padding: 10px;}
+header {position:relative;height:50px;background-color: #3EAEF9;text-align:center;padding: 10px;}
 
 /* footer */
 footer {text-align:center;height:50px;overflow:hidden;background-color: #486A9E;position:relative;}
