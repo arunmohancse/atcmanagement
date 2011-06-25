@@ -1,8 +1,21 @@
+<head>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#list-category').hide();
+            $('#list-category-button').click(function(){
+                $('#list-category').show('slow');
+            })
+            $('#list-category-close').click(function(){
+                    $('#list-category').hide('slow');
+                })
+        });
+    </script>
+</head>
 <div id="view-content">
     <div class="center-menu">
         <a href="/center/addcenter">Add a new center</a>
-        <a href="#">Add a new category</a>
-        <a href="#">List Categories</a>&nbsp;
+        <a href="#" >Add a new category</a>
+        <a href="#" id="list-category-button">List Categories</a>&nbsp;
         <label>Search Details :</label><input type="text" name="searchQuery" id="search-query">
         <select>
             <option value="1">ATC code</option>
@@ -10,7 +23,21 @@
         </select>
         <input type="submit" name="searchSubmit" id="search-submit" value="Search">
     </div>
-    <br><br>
+        <div id="list-category">
+            <div id="list-category-close" title="close"><a href="#" >X</a></div>
+            <div id="list-category-content">
+                <div class="list-head">
+                    <div style="width: 65px;">Code</div>
+                    <div style="width: 100px;">Name</div>
+                </div> 
+                <div class="list-content">
+                    <div style="width: 65px;">1</div>
+                    <div style="width: 100px;">Computer</div>
+                </div>    
+            </div>
+         </div>    
+
+    <br />
     <div class="center-list">
       <div class="list-head">
           <div style="width: 65px;">atccode</div>

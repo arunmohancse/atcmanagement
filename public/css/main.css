@@ -66,5 +66,8 @@ a{text-decoration: none;}
 .list-content{ border-bottom:1px #848F96 solid;}
 .list-content div{display: inline-block; padding: 5px; border-right:1px #848F96 solid;text-transform: capitalize;}
 .list-content:hover{background-color:#C7E7FC;}
-
+#list-category{position: fixed;top:30%;right:50%;width: 250px; z-index: 1;border: 1px #848F96 solid;
+               background-color: #0794ED;}
+#list-category-close{text-align: right}
+#list-category-content{}
 
