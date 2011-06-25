@@ -53,9 +53,9 @@ a{text-decoration: none;}
 /*Menu*/
 .menu:hover{background-color: #818CEF;}
 .login-logout a{color:#FFF}
-.login-logout a:hover{background-color:#546AA5;}
+.login-logout a:hover{background-color:#0463A3;}
 #main-menu a{color:#FFF}
-#main-menu a:hover{background-color:#546AA5; }
+#main-menu a:hover{background-color:#0463A3; }
 .center-menu a{ background-color: #3C7FA8;border: 1px solid #3C7FA8;color: #FFFFFF; padding: 0px 5px;}
 .center-menu a:hover{background-color: #003456;}
 .center-menu label{color: #A34F4F}
