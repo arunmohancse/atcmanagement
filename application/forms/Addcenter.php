@@ -12,6 +12,11 @@ class Application_Form_Addcenter extends Zend_Form
         $atcName = new Zend_Form_Element_Text('atcName');
         $atcName->setLabel('ATC name :');
         $this->addElement($atcName);
+        
+        $atcAddress = new Zend_Form_Element_Textarea('atcAddress');
+        $atcAddress->setAttrib('cols','19')
+                   ->setAttrib('rows', '5');
+        $this->addElement($atcAddress);
 
         $atcDistrict = new Zend_Form_Element_Text('atcDistrict');
         $atcDistrict->setLabel('District :');
@@ -25,8 +30,9 @@ class Application_Form_Addcenter extends Zend_Form
         $atcPincode->setLabel('PIN code');
         $this->addElement($atcPincode);
 
-        $atcCategoryCode = new Zend_Form_Element_Text('atcCategoryCode');
-        $atcCategoryCode->setLabel('Category code');
+        $atcCategoryCode = new Zend_Form_Element_Select('atcCategoryCode');
+        $atcCategoryCode->setLabel('Category');
+
         $this->addElement($atcCategoryCode);
 
         $atcRegDate = new Zend_Form_Element_Text('atcRegDate');
@@ -36,6 +42,10 @@ class Application_Form_Addcenter extends Zend_Form
         $atcExpDate = new Zend_Form_Element_Text('atcExpDate');
         $atcExpDate->setLabel('ExpDate');
         $this->addElement($atcExpDate);
+        
+        $submit = new Zend_Form_Element_Submit('submit');
+        $submit->setLabel('Add');
+        $this->addElement($submit);
 
 
         

@@ -27,6 +27,12 @@ class CenterController extends Zend_Controller_Action
     public function addcenterAction()
     {
         $form = new Application_Form_Addcenter();
+        $centerCategory = new Application_Model_DbTable_Centercategory();
+        $options = $centerCategory->getCategory();
+        foreach ($options AS $option)
+        {
+            $form->atcCategoryCode->addMultioption($option['code'],$option['name']);
+        }
         $this->view->form = $form;
     }
 

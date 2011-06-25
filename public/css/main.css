@@ -42,13 +42,23 @@ section {padding: 15px;min-height: 450px;}
 .login-form{border: #52C6D8 thick double;min-width: 400px;width: 400px;} 
 .error-page-box{min-width: 600px;padding: 10px;color:#A84ADB;font-size:32px;} 
 a{text-decoration: none;}
-.details-form { display: inline-block; float:left;}
-.details-form input[type="text"]{}
-.details-form label{min-width:200px; float:left;}
-.details-form .form-elmts{padding: 5px 2px;}
+
+/*Center Form*/
+.center-details-form { display: inline-block; float:left;padding:15px 10px; }
+.center-details-form input[type="text"]{}
+.center-details-form label{min-width:200px; float:left;}
+.center-details-form .form-elmts{padding: 5px 2px;}
+.center-details-form{border: 1px #848F96 solid;}
 
 /*Menu*/
 .menu:hover{background-color: #818CEF;}
+.login-logout a{color:#FFF}
+.login-logout a:hover{background-color:#546AA5;}
+#main-menu a{color:#FFF}
+#main-menu a:hover{background-color:#546AA5; }
+.center-menu a{ background-color: #EF8B8B;border: 1px solid #EF8B8B;color: #FFFFFF; padding: 0px 5px;}
+.center-menu a:hover{background-color: #F22B2B;}
+.center-menu label{color: #A34F4F}
 /*List center details*/
 .center-list{display: inline-block;background-color:#DEECF2; border:1px #848F96 solid; border-right: 0; border-bottom:0 }
 .list-head { background-color: #56B4F7;position:relative; overflow:hidden; color: #fff; font-weight: bold; text-transform: capitalize;}
@@ -56,3 +66,5 @@ a{text-decoration: none;}
 .list-content{ border-bottom:1px #848F96 solid;}
 .list-content div{display: inline-block; padding: 5px; border-right:1px #848F96 solid;text-transform: capitalize;}
 .list-content:hover{background-color:#C7E7FC;}
+
+

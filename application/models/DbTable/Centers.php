@@ -33,7 +33,28 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
                return NULL;  
         }
     }
-
-
+    
+    /**
+     *
+     * @param type $code
+     * @param type $name
+     * @param type $address
+     * @param type $district
+     * @param type $state
+     * @param type $pin
+     * @param type $category
+     * @param type $regDate
+     * @return type Bolean
+     */
+    public function addCenter($code,$name,$address,$district,$state,$pin,$category,$regDate)
+    {
+        $data = array(
+                'code'=>$code,'name'=>$name,'address'=>$address,'district'=>$district,
+                'state'=>$state,'pincode'=>$pin,'category_code'=>$category,
+                'registration_date'=>$regDate
+        );
+        $status = insert($data);
+        return($status);
+    }
 }
 

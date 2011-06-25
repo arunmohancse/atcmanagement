@@ -1,17 +1,18 @@
-
-<div class="details-form">
 <h2>Enter Details </h2>
+<div class="center-details-form">
+
 <?php
     //echo $this->form;
       echo "<div class=form-elmts><label>ATC code      :</label> ".$this->form->atcCode ."</div>";
       echo "<div class=form-elmts><label>ATC Name      :</label> ".$this->form->atcName ."</div>";
+      echo "<div class=form-elmts><label>Address       :</label> ".$this->form->atcAddress ."</div>";
       echo "<div class=form-elmts><label>District      :</label> ".$this->form->atcDistrict ."</div>";
       echo "<div class=form-elmts><label>State         :</label> ".$this->form->atcState ."</div>";
       echo "<div class=form-elmts><label>PIN code      :</label> ".$this->form->atcPincode ."</div>";
-      echo "<div class=form-elmts><label>Category code :</label> ".$this->form->atcCategoryCode ."</div>";
+      echo "<div class=form-elmts><label>Category      :</label> ".$this->form->atcCategoryCode ."</div>";
 ?>
       <div class=form-elmts><label>Registration Date :</label>
       <?php echo $this->dateComboBox('reg');?></div>
-      <div class=form-elmts><label>Expiry Date :</label>
-      <?php echo $this->dateComboBox('exp');?></div>
+      <?php echo "<div class=form-elmts style=\"float:right;\">".$this->form->submit ."</div>"; ?>
+
 </div>
