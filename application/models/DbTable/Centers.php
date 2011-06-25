@@ -12,8 +12,8 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
     
     /**
      * 
-     * @param type $limit specify how many rows should be get, default is all rows 
-     * @return rows as an array
+     * @param integer $limit specify how many rows should be get, default is all rows 
+     * @return array rows 
      */
     public function getCenterDetails($limit=20)
     {
@@ -36,25 +36,35 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
     
     /**
      *
-     * @param type $code
-     * @param type $name
-     * @param type $address
-     * @param type $district
-     * @param type $state
-     * @param type $pin
-     * @param type $category
-     * @param type $regDate
-     * @return type Bolean
+     * @param string $code
+     * @param string $name
+     * @param string $address
+     * @param string $district
+     * @param string $state
+     * @param integer $pin
+     * @param integer $category
+     * @param Date $regDate
+     * @return string $status
      */
     public function addCenter($code,$name,$address,$district,$state,$pin,$category,$regDate)
     {
-        $data = array(
-                'code'=>$code,'name'=>$name,'address'=>$address,'district'=>$district,
-                'state'=>$state,'pincode'=>$pin,'category_code'=>$category,
-                'registration_date'=>$regDate
-        );
-        $status = insert($data);
-        return($status);
+        $select = $this->select('code')->where('code=?',$code);
+        $codeStatus = $this->fetchRow($select);
+        if($codeStatus){
+            
+            $status = 'INVALID_PRIMARYKEY'; 
+            return($status);
+        }
+        else{
+                 
+            $data = array(
+                    'code'=>$code,'name'=>$name,'address'=>$address,'district'=>$district,
+                    'state'=>$state,'pincode'=>$pin,'category_code'=>$category,
+                    'registration_date'=>$regDate
+            );
+            $status = $this->insert($data);
+            return($status);
+        }
     }
 }
 

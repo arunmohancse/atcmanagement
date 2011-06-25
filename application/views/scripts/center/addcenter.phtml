@@ -1,5 +1,15 @@
+<head>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#error-status').hide(30000);
+            $('#success-status').hide(30000);
+        });
+    </script>
+</head>
 <h2>Enter Details </h2>
 <div class="center-details-form">
+    <span id="error-status" style="color: #D30E04;"><?php echo $this->status; ?></span>
+    <span id="success-status" style="color: #68DD56;"><?php echo $this->success; ?></span>
 <form method="POST">
 <?php
       echo "<div class=form-elmts><label>ATC code      :</label> ".$this->form->atcCode ."</div>";
