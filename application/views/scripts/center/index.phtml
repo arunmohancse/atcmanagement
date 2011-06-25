@@ -28,12 +28,24 @@
             <div id="list-category-content">
                 <div class="list-head">
                     <div style="width: 65px;">Code</div>
-                    <div style="width: 100px;">Name</div>
+                    <div style="width: 200px;">Name</div>
                 </div> 
-                <div class="list-content">
-                    <div style="width: 65px;">1</div>
-                    <div style="width: 100px;">Computer</div>
-                </div>    
+                <?php
+              if($this->categoryDetails)
+              {
+                  foreach ($this->categoryDetails AS $categoryDetail)
+                  {
+                         echo "<div class=\"list-content\">";
+                             echo "<div style=\"width: 65px;\">".$categoryDetail['code'] . "</div>";
+                             echo "<div style=\"width: 200px;\">".$categoryDetail['name'] . "</div>";
+                         echo "</div>";
+                  }
+                      
+              }
+              else{
+                   echo "There is no entry for centers";
+              }
+          ?>   
             </div>
          </div>    
 

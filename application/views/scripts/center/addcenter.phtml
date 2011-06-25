@@ -1,8 +1,7 @@
 <h2>Enter Details </h2>
 <div class="center-details-form">
-
+<form method="POST">
 <?php
-    //echo $this->form;
       echo "<div class=form-elmts><label>ATC code      :</label> ".$this->form->atcCode ."</div>";
       echo "<div class=form-elmts><label>ATC Name      :</label> ".$this->form->atcName ."</div>";
       echo "<div class=form-elmts><label>Address       :</label> ".$this->form->atcAddress ."</div>";
@@ -14,5 +13,5 @@
       <div class=form-elmts><label>Registration Date :</label>
       <?php echo $this->dateComboBox('reg');?></div>
       <?php echo "<div class=form-elmts style=\"float:right;\">".$this->form->submit ."</div>"; ?>
-
+</form>
 </div>

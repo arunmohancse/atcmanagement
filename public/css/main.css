@@ -56,8 +56,8 @@ a{text-decoration: none;}
 .login-logout a:hover{background-color:#546AA5;}
 #main-menu a{color:#FFF}
 #main-menu a:hover{background-color:#546AA5; }
-.center-menu a{ background-color: #EF8B8B;border: 1px solid #EF8B8B;color: #FFFFFF; padding: 0px 5px;}
-.center-menu a:hover{background-color: #F22B2B;}
+.center-menu a{ background-color: #3C7FA8;border: 1px solid #3C7FA8;color: #FFFFFF; padding: 0px 5px;}
+.center-menu a:hover{background-color: #003456;}
 .center-menu label{color: #A34F4F}
 /*List center details*/
 .center-list{display: inline-block;background-color:#DEECF2; border:1px #848F96 solid; border-right: 0; border-bottom:0 }
@@ -66,7 +66,7 @@ a{text-decoration: none;}
 .list-content{ border-bottom:1px #848F96 solid;}
 .list-content div{display: inline-block; padding: 5px; border-right:1px #848F96 solid;text-transform: capitalize;}
 .list-content:hover{background-color:#C7E7FC;}
-#list-category{position: fixed;top:30%;right:50%;width: 250px; z-index: 1;border: 1px #848F96 solid;
+#list-category{position: fixed;top:30%;right:30%;width: 350px; z-index: 1;border: 1px #848F96 solid;
                background-color: #0794ED;}
 #list-category-close{text-align: right}
 #list-category-content{}

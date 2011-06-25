@@ -17,9 +17,14 @@ class CenterController extends Zend_Controller_Action
         else{
             
             $centers = new Application_Model_DbTable_Centers();
-            $centerDetails = $centers->getCenterDetails();
+            $centerDetails = $centers->getCenterDetails();//Getting Center details
             $centerDetails = $centerDetails->toArray();
             $this->view->centerDetails = $centerDetails;
+            
+            $centerCategory = new Application_Model_DbTable_Centercategory();
+            $categoryDetails = $centerCategory->getCategory();//Getting Category List
+            $this->view->categoryDetails = $categoryDetails;
+            
         }//End else
         
     }
