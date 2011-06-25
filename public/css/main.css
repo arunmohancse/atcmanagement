@@ -33,7 +33,7 @@ body {font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1em;co
 header {position:relative;height:50px;background-color: #3EAEF9;text-align:center;padding: 10px;}
 
 /* footer */
-footer {text-align:center;height:50px;overflow:hidden;background-color: #486A9E;position:relative;}
+footer {text-align:center;height:50px;overflow:hidden;background-color: #3CA9F2;position:relative;}
 footer span {color: #111;font:12px/20px Arial, Helvetica, sans-serif;padding-top: 15px;display:block}
 footer span a {color:#333}
 /*section*/
