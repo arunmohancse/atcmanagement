@@ -71,7 +71,10 @@ a{text-decoration: none;}
                background-color: #0794ED;}
 #list-category-close{text-align: right}
 #list-category-content{}
-
+#add-category{position: fixed;top:30%;right:60%;width: 350px; z-index: 1;border: 1px #848F96 solid;
+               background-color: #7C94A3; min-height: 150px;}
+#add-category-close{text-align: right}
+#add-category-close a{color: #EF0404}
 
 
 

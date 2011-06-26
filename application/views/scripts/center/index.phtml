@@ -1,29 +1,69 @@
 <head>
     <script type="text/javascript">
         $(document).ready(function(){
+            /**
+             *@Description Hide and show the Listcategory div
+             */
             $('#list-category').hide();
             $('#list-category-button').click(function(){
                 $('#list-category').show('slow');
             })
             $('#list-category-close').click(function(){
                     $('#list-category').hide('slow');
-                })
+            })
+            /**
+             *@Description Hide and show the Addcategory div
+             */
+            $('#add-category').hide();
+            $('#add-category-button').click(function(){
+                $('#add-category').show('slow');
+            })
+            $('#add-category-close').click(function(){
+                    $('#add-category').hide('slow');
+            })
+            
+            /**
+             *@Description it will add category details
+             *@param string $categoryname
+             */
+            $('#categoryAddButton').click(function(){
+               var categoryName = $('#categoryName').val();
+               if(categoryName==''){ alert('Name Field is Empty'); return(0); }
+                     $.ajax({
+                            type: "POST",
+                            url: "/center/ajaxaddcategory",
+                            data: "categoryName="+categoryName,
+                            success: function(msg){
+                              alert(msg);
+                            }
+                     });
+             });      
         });
     </script>
 </head>
 <div id="view-content">
     <div class="center-menu">
-        <a href="/center/addcenter" title="Click here to add new center">Add a new center</a>
+        <a href="/center/addcenter"  title="Click here to add new center">Add a new center</a>
         <a href="#" title="Click here to edit center">Edit center</a>
-        <a href="#" title="Click here to add new category">Add a new category</a>
+        <a href="#" id="add-category-button" title="Click here to add new category">Add a new category</a>
         <a href="#" id="list-category-button" title="Click here to view all categories">List Categories</a>&nbsp;
         <label>Search Details :</label><input type="text" name="searchQuery" id="search-query">
         <select>
             <option value="1">ATC code</option>
             <option value="2">Center Name</option>
         </select>
-        <input type="submit" name="searchSubmit" id="search-submit" value="Search">
+        <input type="submit" name="searchSubmit" id="search-submit" value="Search" />
     </div>
+        <div id="add-category">
+            <div id="add-category-close" title="close"><a href="#" >X</a></div>
+            <ul>
+                <li><h2>Add a new category</h2></li>
+            </ul>
+            <label>Category Name :</label>
+            <?php echo $this->addCategoryForm->categoryName;
+                  echo $this->addCategoryForm->categoryAddButton; 
+            ?>
+        </div>
         <div id="list-category">
             <div id="list-category-close" title="close"><a href="#" >X</a></div>
             <div id="list-category-content">
@@ -32,23 +72,23 @@
                     <div style="width: 200px;">Name</div>
                 </div> 
                 <?php
-              if($this->categoryDetails)
-              {
-                  foreach ($this->categoryDetails AS $categoryDetail)
-                  {
-                         echo "<div class=\"list-content\">";
-                             echo "<div style=\"width: 65px;\">".$categoryDetail['code'] . "</div>";
-                             echo "<div style=\"width: 200px;\">".$categoryDetail['name'] . "</div>";
-                         echo "</div>";
-                  }
-                      
-              }
-              else{
-                   echo "There is no entry for centers";
-              }
-          ?>   
+                      if($this->categoryDetails)
+                      {
+                          foreach ($this->categoryDetails AS $categoryDetail)
+                          {
+                                 echo "<div class=\"list-content\">";
+                                     echo "<div style=\"width: 65px;\">".$categoryDetail['code'] . "</div>";
+                                     echo "<div style=\"width: 200px;\">".$categoryDetail['name'] . "</div>";
+                                 echo "</div>";
+                          }
+
+                      }
+                      else{
+                           echo "There is no entry for centers";
+                      }
+               ?>   
             </div>
-         </div>    
+        </div>    
 
     <br />
     <div class="center-list">

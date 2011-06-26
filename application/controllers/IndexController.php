@@ -39,16 +39,22 @@ class IndexController extends Zend_Controller_Action
                  $this->view->error = "Invalid username or password" ;
                 }
              }
-        }
+        
     }
-       public function logoutAction()
-         {
+    }
+    public function logoutAction()
+    {
            // clear everything - session is cleared also!
            Zend_Auth::getInstance()->clearIdentity();
            $this->_helper->redirector('Index','index');
-         }
+    }
+
     
+
+
 }
+
+
 
 
 

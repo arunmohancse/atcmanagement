@@ -25,6 +25,10 @@ class CenterController extends Zend_Controller_Action
             $categoryDetails = $centerCategory->getCategory();//Getting Category List
             $this->view->categoryDetails = $categoryDetails;
             
+            $addCategoryForm = new Application_Form_Addcategory();
+            $this->view->addCategoryForm = $addCategoryForm;
+            
+            
         }//End else
         
     }
@@ -79,11 +83,63 @@ class CenterController extends Zend_Controller_Action
                     $this->view->status = 'Something Went wrong';
                 }
             }
+        
+    }
+   }
+    public function ajaxaddcategoryAction()
+    {
+        $this->_helper->layout()->disableLayout(); 
+        $this->_helper->viewRenderer->setNoRender();
+        $form = new Application_Form_Addcategory();
+        $request = $this->getRequest();
+        if($request->isPost())
+        {
+            
+            if($form->isValid($request->getPost()))
+            {     
+                $centerCategory = new Application_Model_DbTable_Centercategory();
+                $categoryName = $request->getPost('categoryName');
+                $status = $centerCategory->addCategory($categoryName);
+                if($status=='DUPLICATE_NAME')
+                {
+                    $msg = 'Entered category name is already on your record';
+                    echo $msg;
+                }
+                else if($status){
+                    
+                    $msg ='Data saved!!!         ID : ' . $status . '      Name : ' . $categoryName;
+                    echo $msg;
+                }
+                else
+                {
+                    $msg = 'Something went wrong.. please try again';
+                    echo $msg;
+                }
+            }
+            else{
+                  $errorMessages = $form->getMessages();
+                  $msg = '';
+                  foreach ($errorMessages AS $errorMessage)
+                  {
+                      foreach ($errorMessage AS $eacherror)
+                              $msg .= $eacherror;
+                  }
+                   
+                  echo $msg;
+            }
+            
         }
+        else //Request is not POST
+        {
+            echo "Something Went wrong.. please try again";
+        }
+        
     }
 
 
 }
+
+
 
 
 
