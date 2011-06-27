@@ -76,5 +76,9 @@ a{text-decoration: none;}
 #add-category-close{text-align: right}
 #add-category-close a{color: #EF0404}
 
+/*search-box*/
+.search-box{display:block; width: 200px;float: right; border:1px #848F96 solid; background-color: #82BBC9;
+            color: #5E5E5D}
+
 
 

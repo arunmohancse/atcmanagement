@@ -33,6 +33,7 @@
         <formFile formName="Login"/>
         <formFile formName="Addcenter"/>
         <formFile formName="Addcategory"/>
+        <formFile formName="Searchcenter"/>
       </formsDirectory>
       <layoutsDirectory enabled="false"/>
       <modelsDirectory>

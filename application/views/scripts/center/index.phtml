@@ -6,20 +6,20 @@
              */
             $('#list-category').hide();
             $('#list-category-button').click(function(){
-                $('#list-category').show('slow');
+                $('#list-category').fadeIn('slow');
             })
             $('#list-category-close').click(function(){
-                    $('#list-category').hide('slow');
+                    $('#list-category').fadeOut('slow');
             })
             /**
              *@Description Hide and show the Addcategory div
              */
             $('#add-category').hide();
             $('#add-category-button').click(function(){
-                $('#add-category').show('slow');
+                $('#add-category').fadeIn('slow');
             })
             $('#add-category-close').click(function(){
-                    $('#add-category').hide('slow');
+                    $('#add-category').fadeOut('slow');
             })
             
             /**
@@ -47,12 +47,13 @@
         <a href="#" title="Click here to edit center">Edit center</a>
         <a href="#" id="add-category-button" title="Click here to add new category">Add a new category</a>
         <a href="#" id="list-category-button" title="Click here to view all categories">List Categories</a>&nbsp;
-        <label>Search Details :</label><input type="text" name="searchQuery" id="search-query">
-        <select>
-            <option value="1">ATC code</option>
-            <option value="2">Center Name</option>
-        </select>
-        <input type="submit" name="searchSubmit" id="search-submit" value="Search" />
+    </div>
+    <div class="search-box">
+        <form action="#" method="POST">
+            <label>Search Details :</label><?php echo $this->Searchcenter->searchCenterQueryBox; ?>
+            <?php echo $this->Searchcenter->searchCenterOption; ?>
+            <?php echo $this->Searchcenter->centerSearchsubmit; ?>
+        </form>
     </div>
         <div id="add-category">
             <div id="add-category-close" title="close"><a href="#" >X</a></div>

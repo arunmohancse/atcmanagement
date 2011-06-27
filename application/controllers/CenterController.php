@@ -27,7 +27,9 @@ class CenterController extends Zend_Controller_Action
             
             $addCategoryForm = new Application_Form_Addcategory();
             $this->view->addCategoryForm = $addCategoryForm;
-            
+
+            $Searchcenter = new Application_Form_Searchcenter();
+            $this->view->Searchcenter = $Searchcenter;
             
         }//End else
         
@@ -84,8 +86,9 @@ class CenterController extends Zend_Controller_Action
                 }
             }
         
+        }
     }
-   }
+
     public function ajaxaddcategoryAction()
     {
         $this->_helper->layout()->disableLayout(); 
@@ -136,8 +139,15 @@ class CenterController extends Zend_Controller_Action
         
     }
 
+    public function searchAction()
+    {
+        
+    }
+
 
 }
+
+
 
 
 
