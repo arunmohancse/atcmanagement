@@ -66,5 +66,33 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
             return($status);
         }
     }
+
+    public function searchCenter($query,$option)
+    {
+        if($option==1)
+        {
+            $searchCriteria = $this->getAdapter()->quoteInto('centers.code = ?',$query);
+        }
+        else
+        {
+            $searchCriteria = $this->getAdapter()->quoteInto('centers.name LIKE ?','%'.$query.'%');
+        }
+        $select = $this->select()
+                       ->from('centers')
+                       ->setIntegrityCheck(false)
+                       ->join('center_category AS category','centers.category_code=category.code',array('category.name AS categoryname'))
+                       ->order('centers.code asc')
+                       ->where($searchCriteria);
+                       
+        //echo $select;exit;
+        $value = $this->fetchAll($select);
+        if($value->toArray())
+        {
+            return($value);
+        }
+        else {
+               return NULL;
+        }
+    }
 }
 

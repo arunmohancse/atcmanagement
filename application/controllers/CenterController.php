@@ -141,7 +141,15 @@ class CenterController extends Zend_Controller_Action
 
     public function searchAction()
     {
-        
+        $request = $this->getRequest();
+        if($request->isPost()){
+            $query = $request->getPost('searchCenterQueryBox');
+            $option = $request->getPost('searchCenterOption');
+
+            $center = new Application_Model_DbTable_Centers();
+            $searchResults = $center->searchCenter($query, $option);
+            $this->view->searchResults = $searchResults;
+        }
     }
 
 
