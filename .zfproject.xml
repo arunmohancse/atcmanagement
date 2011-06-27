@@ -12,6 +12,7 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="login"/>
           <actionMethod actionName="ajaxaddcategory"/>
+          <actionMethod actionName="test"/>
         </controllerFile>
         <controllerFile controllerName="Error"/>
         <controllerFile controllerName="Home">
@@ -73,6 +74,9 @@
           <viewControllerScriptsDirectory forControllerName="Center">
             <viewScriptFile forActionName="ajaxaddcategory"/>
           </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="test"/>
+          </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
         <viewFiltersDirectory enabled="false"/>
@@ -107,7 +111,9 @@
       <testPHPUnitBootstrapFile filesystemName="bootstrap.php"/>
       <testApplicationDirectory>
         <testApplicationControllerDirectory>
-          <testApplicationControllerFile forControllerName="Index"/>
+          <testApplicationControllerFile forControllerName="Index">
+            <testApplicationActionMethod forActionName="test"/>
+          </testApplicationControllerFile>
         </testApplicationControllerDirectory>
       </testApplicationDirectory>
       <testLibraryDirectory/>

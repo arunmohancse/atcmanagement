@@ -44,7 +44,7 @@ section {padding: 15px;min-height: 450px; background-color: #D2E7F4;}
 a{text-decoration: none;}
 
 /*Center Form*/
-#addcenter-leftblock{display:inline-block;min-width: 200px;float: left;}
+#addcenter-leftblock{display:inline-block;min-width: 200px;float: left;color: #D2E7F4}
 .center-details-form { display: inline-block; float:left;padding:15px 10px; }
 .center-details-form input[type="text"]{}
 .center-details-form label{min-width:200px; float:left;}

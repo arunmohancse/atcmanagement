@@ -8,6 +8,9 @@ class IndexController extends Zend_Controller_Action
         /* Initialize action controller here */
     }
 
+    /**
+     * @Description Login authentication
+     */
     public function indexAction()
     {
         $form = new Application_Form_Login();
@@ -38,9 +41,10 @@ class IndexController extends Zend_Controller_Action
                 else {
                  $this->view->error = "Invalid username or password" ;
                 }
-             }
+             } //End If isvalid(POST)
         
-    }
+    
+         }//End If POST
     }
     public function logoutAction()
     {
@@ -49,10 +53,15 @@ class IndexController extends Zend_Controller_Action
            $this->_helper->redirector('Index','index');
     }
 
-    
+    public function testAction()
+    {
+        // action body
+    }
 
 
 }
+
+
 
 
 

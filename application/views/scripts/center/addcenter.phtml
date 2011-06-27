@@ -2,9 +2,13 @@
     <script type="text/javascript">
         $(document).ready(function(){
            // $('#error-status').hide(90000);
-            $('#success-status').hide(80000);
+            $('#success-status').fadeOut(90000);
             $('#atcCode').click(function(){
                 $('#error-status').hide('fast');
+                $(this).val("");
+            })
+            $('.form-elmts').keypress(function(){
+               
             })
         });
     </script>
@@ -15,7 +19,7 @@
 <div class="center-details-form">
     <h2>Enter Details </h2>
     <span id="error-status" style="color: #D30E04;"><?php echo $this->status; ?></span>
-    <span id="success-status" style="color: #68DD56;"><?php echo $this->success; ?></span>
+    <span id="success-status" style="color: #3B8702;"><?php echo $this->success; ?></span>
 <form method="POST">
 <?php
       echo "<div class=form-elmts><label>ATC code      :</label> ".$this->form->atcCode ."</div>";
