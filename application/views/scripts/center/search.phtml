@@ -1,0 +1,43 @@
+<div class="search-box">
+        <form action="/center/search" method="POST">
+            <label>Search Here :</label><?php echo $this->Searchcenter->searchCenterQueryBox; ?>
+            <?php echo $this->Searchcenter->searchCenterOption; ?>
+            <?php echo $this->Searchcenter->centerSearchsubmit; ?>
+        </form>
+</div>
+<div style="display: inline-block;width: 300px;font-size:  20px;"><h2>SearchResults</h2></div>
+<div class="center-list">
+    <div class="list-head">
+          <div style="width: 65px;">atccode</div>
+          <div style="width: 100px;">Name</div>
+          <div style="width: 180px;">Address</div>
+          <div style="width: 100px;">district</div>
+          <div style="width: 100px;">state</div>
+          <div style="width: 65px;">pincode</div>
+          <div style="width: 120px;">category</div>
+          <div style="width: 120px;">Registration Date</div>
+          <div style="width: 120px;">Contact Numbers</div>
+    </div>
+    <?php
+         if($this->searchResults)
+         {
+             foreach ($this->searchResults AS $searchResult)
+             {
+                 echo "<div class=\"list-content\">";
+                             echo "<div style=\"width: 65px;\">".$searchResult->code . "</div>";
+                             echo "<div style=\"width: 100px;\">".$searchResult->name . "</div>";
+                             echo "<div style=\"width: 180px;\">".$searchResult->address . "</div>";
+                             echo "<div style=\"width: 100px;\">".$searchResult->district . "</div>";
+                             echo "<div style=\"width: 100px;\">".$searchResult->state . "</div>";
+                             echo "<div style=\"width: 65px;\">".$searchResult->pincode . "</div>";
+                             echo "<div style=\"width: 120px;\">".$searchResult->categoryname . "</div>";
+                             echo "<div style=\"width: 120px;\">".$searchResult->registration_date . "</div>";
+                             echo "<div style=\"width: 120px;\">".$searchResult->contact_number1 . "</div>";
+                         echo "</div>";
+             }
+         }
+         else {
+                echo "No Results..";
+         }
+    ?>
+</div>

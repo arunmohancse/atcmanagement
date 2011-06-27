@@ -141,6 +141,9 @@ class CenterController extends Zend_Controller_Action
 
     public function searchAction()
     {
+        $Searchcenter = new Application_Form_Searchcenter();
+        $this->view->Searchcenter = $Searchcenter;
+
         $request = $this->getRequest();
         if($request->isPost()){
             $query = $request->getPost('searchCenterQueryBox');
