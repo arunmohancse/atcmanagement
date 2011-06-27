@@ -71,11 +71,14 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
     {
         if($option==1)
         {
-            $searchCriteria = $this->getAdapter()->quoteInto('centers.code = ?',$query);
+            if($query==NULL)
+                  $searchCriteria = 1;
+            else
+                  $searchCriteria = $this->getAdapter()->quoteInto('centers.code = ?',$query);
         }
         else
         {
-            $searchCriteria = $this->getAdapter()->quoteInto('centers.name LIKE ?','%'.$query.'%');
+            $searchCriteria = $this->getAdapter()->quoteInto('centers.name LIKE ?',$query.'%');
         }
         $select = $this->select()
                        ->from('centers')
