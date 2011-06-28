@@ -45,7 +45,7 @@ a{text-decoration: none;}
 /*Header content*/
 #header-content{width: 1069px; margin: 0pt auto;}
 /*View Content*/
-#view-content{width: 1069px; margin: 0pt auto;}
+#view-content{width: 1069px; margin: 0pt auto;min-height: 550px;}
 
 /*Center Form*/
 #addcenter-leftblock{display:inline-block;min-width: 200px;float: left;color: #D2E7F4}
