@@ -98,9 +98,13 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
         }
     }
 
-    public function remainderForRegistration()
+    public function remainderForRegistration($remainderDate)
     {
-        
+        //echo "entry"; exit;
+        $select  = $this->select('name')->where('registration_date<?',$remainderDate);
+        $rows = $this->fetchAll($select);
+        //echo "<pre>"; print_r($rows);exit;
+        return $rows;
     }
 }
 

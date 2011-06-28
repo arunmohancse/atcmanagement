@@ -1,3 +1,21 @@
 <div align="center" style="font-size: 30px;color: #09331B;">
     <h2>Page Under Construction..</h2>
 </div>
+<div style="display: inline-block;width: 400px;">
+    <?php
+        if($this->remainderDetails->toArray())
+        {
+            foreach ($this->remainderDetails AS $remainderDetail)
+            {
+                 $date = new Zend_Date($remainderDetail->registration_date,'yyyy-MM-dd');
+                 //$date->add('1', Zend_Date::MONTH);
+                 $date->add('1', Zend_Date::YEAR);
+                 $expiryDate =  $date->toString('yyyy-MM-dd');
+                 echo "<div style=\"display:inline-block;color:RED\">Registration of the center <b>" . $remainderDetail->name . "</b> will expire on <b>" . $expiryDate . "</b></div>";
+            }
+        }
+        else{
+            echo "";
+        }
+    ?>
+</div>

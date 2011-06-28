@@ -55,7 +55,21 @@ class IndexController extends Zend_Controller_Action
 
     public function testAction()
     {
-        // action body
+        $date = new Zend_Date('2011-02-10','yyyy-MM-dd');
+        echo $date->toString('yyyy-MM-dd');exit;
+        $date->add('1', Zend_Date::MONTH);
+        $date->add('1', Zend_Date::DAY);
+        //echo $date->getIso('yyyy-mm-dd'); exit;
+        $remainderDate =  $date->toString('yyyy-MM-dd');
+        $centers = new Application_Model_DbTable_Centers();
+        $remainderDetails = $centers->remainderForRegistration($remainderDate);
+        if($remainderDetails->toArray())
+        {
+            echo "<pre>"; print_r($remainderDetails);exit;
+        }
+        else{
+            echo "There is no notification.";exit;
+        }
     }
 
 
