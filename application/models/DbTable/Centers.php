@@ -97,5 +97,10 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
                return NULL;
         }
     }
+
+    public function remainderForRegistration()
+    {
+        
+    }
 }
 

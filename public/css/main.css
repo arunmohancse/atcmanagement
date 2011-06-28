@@ -80,6 +80,7 @@ a{text-decoration: none;}
 .search-box{display:block; width: 200px;float: right; border:1px #848F96 solid; background-color: #C2E8FC;
             color: #5E5E5D;padding: 5px}
 #centerSearchsubmit {background-color:#02568E;color:#F7F7F7;font-size:10px;font-weight:bold;border-color: #0D3956}
+#centerSearchsubmit:hover{background-color:#03368E;}
 #searchCenterOption{background-color:#02568E;color:#F7F7F7;font-size:10px;font-weight:bold;border-color: #0D3956}
 
 
