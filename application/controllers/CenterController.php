@@ -82,7 +82,7 @@ class CenterController extends Zend_Controller_Action
                     else
                     {
                         $form->reset();
-                        $this->view->success = 'Successfully added a center....!! ';
+                        $this->view->success = 'Successfully added....!! ';
                     }
                 }
                 else{
