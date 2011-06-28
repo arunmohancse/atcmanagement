@@ -43,6 +43,18 @@ class Application_Form_Addcenter extends Zend_Form
         $atcExpDate->setLabel('ExpDate');
         $this->addElement($atcExpDate);
         
+        $atcContactNumber1 = new Zend_Form_Element_Text('atcContactNumber1');
+        $this->addElement($atcContactNumber1);
+
+        $atcContactNumber2 = new Zend_Form_Element_Text('atcContactNumber2');
+        $this->addElement($atcContactNumber2);
+
+        $atcContactNumber3 = new Zend_Form_Element_Text('atcContactNumber3');
+        $this->addElement($atcContactNumber3);
+
+        $atcContactNumber4 = new Zend_Form_Element_Text('atcContactNumber4');
+        $this->addElement($atcContactNumber4);
+
         $submit = new Zend_Form_Element_Submit('submit');
         $submit->setLabel('Add');
         $this->addElement($submit);
