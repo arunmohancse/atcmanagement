@@ -39,7 +39,7 @@ footer span a {color:#333}
 /*section*/
 body{font-family: arial; font-size: 13px;}
 section {padding: 15px;min-height: 450px; background-color: #D2E7F4;}
-.login-form{border: #52C6D8 thick double;min-width: 400px;width: 400px;} 
+.login-form{border: #52C6D8 thick double;min-width: 400px;width: 400px;-moz-border-radius: 0.4em 0.4em 0.4em 0.4em;}
 .error-page-box{min-width: 600px;padding: 10px;color:#A84ADB;font-size:32px;} 
 a{text-decoration: none;}
 
@@ -68,17 +68,17 @@ a{text-decoration: none;}
 .list-content div{display: inline-block; padding: 5px; border-right:1px #848F96 solid;text-transform: capitalize;}
 .list-content:hover{background-color:#C7E7FC;}
 #list-category{position: fixed;top:30%;right:30%;width: 350px; z-index: 1;border: 1px #848F96 solid;
-               background-color: #0794ED;}
+               background-color: #0794ED;-moz-border-radius: 0.6em 0.6em 0.6em 0.6em; padding: 5px;}
 #list-category-close{text-align: right}
 #list-category-content{}
 #add-category{position: fixed;top:30%;right:60%;width: 350px; z-index: 1;border: 1px #848F96 solid;
-               background-color: #7C94A3; min-height: 150px;}
+               background-color: #7C94A3; min-height: 150px;-moz-border-radius: 0.6em 0.6em 0.6em 0.6em; padding: 5px;}
 #add-category-close{text-align: right}
 #add-category-close a{color: #EF0404}
 
 /*search-box*/
 .search-box{display:block; width: 200px;float: right; border:1px #848F96 solid; background-color: #C2E8FC;
-            color: #5E5E5D;padding: 5px}
+            color: #5E5E5D;padding: 5px; -moz-border-radius: 0.6em 0.6em 0.6em 0.6em;}
 #centerSearchsubmit {background-color:#02568E;color:#F7F7F7;font-size:10px;font-weight:bold;border-color: #0D3956}
 #centerSearchsubmit:hover{background-color:#03368E;}
 #searchCenterOption{background-color:#02568E;color:#F7F7F7;font-size:10px;font-weight:bold;border-color: #0D3956}
