@@ -52,15 +52,19 @@ class CenterController extends Zend_Controller_Action
             {
                 //Getting values from form
                 $atcCode = $request->getPost('atcCode');
-                $atcName= $request->getPost('atcName');
-                $atcAddress= $request->getPost('atcAddress');
-                $atcDistrict= $request->getPost('atcDistrict');
-                $atcState= $request->getPost('atcState');
-                $atcPincode= $request->getPost('atcPincode');
-                $atcCategoryCode= $request->getPost('atcCategoryCode');
-                $reg_day= $request->getPost('reg_day');
-                $reg_month= $request->getPost('reg_month');
-                $reg_year= $request->getPost('reg_year');
+                $atcName = $request->getPost('atcName');
+                $atcAddress = $request->getPost('atcAddress');
+                $atcDistrict = $request->getPost('atcDistrict');
+                $atcState = $request->getPost('atcState');
+                $atcPincode = $request->getPost('atcPincode');
+                $atcCategoryCode = $request->getPost('atcCategoryCode');
+                $atcContactNumber1 = $request->getPost('atcContactNumber1');
+                $atcContactNumber2 = $request->getPost('atcContactNumber2');
+                $atcContactNumber3 = $request->getPost('atcContactNumber3');
+                $atcContactNumber4 = $request->getPost('atcContactNumber4');
+                $reg_day = $request->getPost('reg_day');
+                $reg_month = $request->getPost('reg_month');
+                $reg_year = $request->getPost('reg_year');
                 $datearray = array('year' => $reg_year,
                    'month' => $reg_month,
                    'day' => $reg_day,

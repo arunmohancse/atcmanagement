@@ -41,20 +41,24 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
                return NULL;  
         }
     }
-    
+
     /**
      *
-     * @param string $code
-     * @param string $name
-     * @param string $address
-     * @param string $district
-     * @param string $state
-     * @param integer $pin
-     * @param integer $category
+     * @param String $code
+     * @param String $name
+     * @param String $address
+     * @param String $district
+     * @param String $state
+     * @param String $pin
+     * @param Integer $category
      * @param Date $regDate
-     * @return string $status
+     * @param String $contactNumber1
+     * @param String $contactNumber2
+     * @param String $contactNumber3
+     * @param String $contactNumber4
+     * @return String
      */
-    public function addCenter($code,$name,$address,$district,$state,$pin,$category,$regDate)
+    public function addCenter($code,$name,$address,$district,$state,$pin,$category,$regDate,$contactNumber1,$contactNumber2,$contactNumber3,$contactNumber4)
     {
         if($code==''){
             $status = 'INVALID_PRIMARYKEY'; 
@@ -65,7 +69,9 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
             $data = array(
                     'code'=>$code,'name'=>$name,'address'=>$address,'district'=>$district,
                     'state'=>$state,'pincode'=>$pin,'category_code'=>$category,
-                    'registration_date'=>$regDate
+                    'registration_date'=>$regDate,
+                    'contact_number1'=>$contactNumber1,'contact_number2'=>$contactNumber2,'contact_number3'=>$contactNumber3,
+                    'contact_number4'=>$contactNumber4
             );
             try{
                 $status = $this->insert($data);
@@ -90,12 +96,14 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
      * @param Date $regDate
      * @return string $status
      */
-    public function updateCenter($code,$name,$address,$district,$state,$pin,$category,$regDate)
+    public function updateCenter($code,$name,$address,$district,$state,$pin,$category,$regDate,$contactNumber1,$contactNumber2,$contactNumber3,$contactNumber4)
     {
         $data = array(
                     'name'=>$name,'address'=>$address,'district'=>$district,
                     'state'=>$state,'pincode'=>$pin,'category_code'=>$category,
-                    'registration_date'=>$regDate
+                    'registration_date'=>$regDate,
+                    'contact_number1'=>$contactNumber1,'contact_number2'=>$contactNumber2,'contact_number3'=>$contactNumber3,
+                    'contact_number4'=>$contactNumber4
             );
         $where = $this->getAdapter()->quoteInto('centers.code = ?',$code);
         $status = $this->update($data,$where);
