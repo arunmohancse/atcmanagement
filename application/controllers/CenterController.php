@@ -72,7 +72,7 @@ class CenterController extends Zend_Controller_Action
                 $date = new Zend_Date($datearray);
                 $regDate = $date->get('yyyy-MM-dd');
                 $center = new Application_Model_DbTable_Centers();
-                $status = $center->addCenter($atcCode, $atcName, $atcAddress, $atcDistrict, $atcState, $atcPincode, $atcCategoryCode, $regDate);
+                $status = $center->addCenter($atcCode, $atcName, $atcAddress, $atcDistrict, $atcState, $atcPincode, $atcCategoryCode, $regDate,$atcContactNumber1,$atcContactNumber2,$atcContactNumber3,$atcContactNumber4);
                 if($status)
                  {
                     if($status=='INVALID_PRIMARYKEY')
