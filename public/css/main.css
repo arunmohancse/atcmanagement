@@ -38,7 +38,7 @@ footer span {color: #111;font:12px/20px Arial, Helvetica, sans-serif;padding-top
 footer span a {color:#333}
 /*section*/
 body{font-family: arial; font-size: 13px;}
-section {padding: 15px;min-height: 550px; background-color: #D2E7F4;}
+section {padding: 0;min-height: 550px; background-color: #D2E7F4;}
 .login-form{border: #52C6D8 thick double;min-width: 400px;width: 400px;-moz-border-radius: 0.4em 0.4em 0.4em 0.4em;}
 .error-page-box{min-width: 600px;padding: 10px;color:#A84ADB;font-size:32px;} 
 a{text-decoration: none;}
