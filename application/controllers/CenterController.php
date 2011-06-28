@@ -152,6 +152,7 @@ class CenterController extends Zend_Controller_Action
             $center = new Application_Model_DbTable_Centers();
             $searchResults = $center->searchCenter($query, $option);
             $this->view->searchResults = $searchResults;
+            $this->view->searchQuery = $query;
         }
     }
 
