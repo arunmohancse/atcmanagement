@@ -13,29 +13,31 @@
         });
     </script>
 </head>
-<div id="addcenter-leftblock">
-    <span>H</span>
-</div>
-<div class="center-details-form">
-    <h2>Enter Details </h2>
-    <span id="error-status" style="color: #D30E04;"><?php echo $this->status; ?></span>
-    <span id="success-status" style="color: #3B8702;"><?php echo $this->success; ?></span>
-<form method="POST">
-<?php
-      echo "<div class=form-elmts><label>ATC code        :</label> ".$this->form->atcCode ."</div>";
-      echo "<div class=form-elmts><label>ATC Name        :</label> ".$this->form->atcName ."</div>";
-      echo "<div class=form-elmts><label>Address         :</label> ".$this->form->atcAddress ."</div>";
-      echo "<div class=form-elmts><label>District        :</label> ".$this->form->atcDistrict ."</div>";
-      echo "<div class=form-elmts><label>State           :</label> ".$this->form->atcState ."</div>";
-      echo "<div class=form-elmts><label>PIN code        :</label> ".$this->form->atcPincode ."</div>";
-      echo "<div class=form-elmts><label>Category        :</label> ".$this->form->atcCategoryCode ."</div>";
-      echo "<div class=form-elmts><label>Contact Number1 :</label> ".$this->form->atcContactNumber1 ."</div>";
-      echo "<div class=form-elmts><label>Contact Number2 :</label> ".$this->form->atcContactNumber2 ."</div>";
-      echo "<div class=form-elmts><label>Contact Number3 :</label> ".$this->form->atcContactNumber3 ."</div>";
-      echo "<div class=form-elmts><label>Contact Number4 :</label> ".$this->form->atcContactNumber4 ."</div>";
-?>
-      <div class=form-elmts><label>Registration Date :</label>
-      <?php echo $this->dateComboBox('reg');?></div>
-      <?php echo "<div class=form-elmts style=\"float:right;\">".$this->form->submit ."</div>"; ?>
-</form>
+<div id="view-content">
+    <div id="addcenter-leftblock">
+        <span>H</span>
+    </div>
+    <div class="center-details-form">
+        <h2>Enter Details </h2>
+        <span id="error-status" style="color: #D30E04;"><?php echo $this->status; ?></span>
+        <span id="success-status" style="color: #3B8702;"><?php echo $this->success; ?></span>
+    <form method="POST">
+    <?php
+          echo "<div class=form-elmts><label>ATC code        :</label> ".$this->form->atcCode ."</div>";
+          echo "<div class=form-elmts><label>ATC Name        :</label> ".$this->form->atcName ."</div>";
+          echo "<div class=form-elmts><label>Address         :</label> ".$this->form->atcAddress ."</div>";
+          echo "<div class=form-elmts><label>District        :</label> ".$this->form->atcDistrict ."</div>";
+          echo "<div class=form-elmts><label>State           :</label> ".$this->form->atcState ."</div>";
+          echo "<div class=form-elmts><label>PIN code        :</label> ".$this->form->atcPincode ."</div>";
+          echo "<div class=form-elmts><label>Category        :</label> ".$this->form->atcCategoryCode ."</div>";
+          echo "<div class=form-elmts><label>Contact Number1 :</label> ".$this->form->atcContactNumber1 ."</div>";
+          echo "<div class=form-elmts><label>Contact Number2 :</label> ".$this->form->atcContactNumber2 ."</div>";
+          echo "<div class=form-elmts><label>Contact Number3 :</label> ".$this->form->atcContactNumber3 ."</div>";
+          echo "<div class=form-elmts><label>Contact Number4 :</label> ".$this->form->atcContactNumber4 ."</div>";
+    ?>
+          <div class=form-elmts><label>Registration Date :</label>
+          <?php echo $this->dateComboBox('reg');?></div>
+          <?php echo "<div class=form-elmts style=\"float:right;\">".$this->form->submit ."</div>"; ?>
+    </form>
+    </div>
 </div>

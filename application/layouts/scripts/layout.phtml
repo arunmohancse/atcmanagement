@@ -7,27 +7,27 @@
     </head>
     <body>
         <header style="color:#FFFFFF;">
-                   <?php
-                   $this->headScript()->prependFile('/js/jquery-1.5.1.min.js');
-                   //$this->headScript()->appendFile('/js/jquery.datePicker.js');
-                   echo $this->headScript();
-                   if(Zend_Auth::getInstance()->hasIdentity())
-                    { ?>
-            <div align="right" style="position:absolute;right: 100px;" class="login-logout">
-                 <a href="/index/logout" style="text-decoration: none;text-align: left;">Logout</a>
-            </div>
-            <div id="main-menu" align="left" style="position:absolute;">
-                    <a href="/home" style="">Home</a>
-                    <a href="/center" style="">Centers</a>
-                    <a href="/student" style="">Students</a>
-                    <a href="/certificate" style="">Certificates</a>
+                <div id="header-content">
+                       <?php
+                       $this->headScript()->prependFile('/js/jquery-1.5.1.min.js');
+                       //$this->headScript()->appendFile('/js/jquery.datePicker.js');
+                       echo $this->headScript();
+                       if(Zend_Auth::getInstance()->hasIdentity())
+                        { ?>
+                        <div  style="float:right;" class="login-logout">
+                             <a href="/index/logout" style="text-decoration: none;text-align: left;">Logout</a>
+                        </div>
+                        <div id="main-menu" align="left" style="float:left;position: absolute;">
+                                <a href="/home" style="">Home</a>
+                                <a href="/center" style="">Centers</a>
+                                <a href="/student" style="">Students</a>
+                                <a href="/certificate" style="">Certificates</a>
 
-            </div>
-             <?php } ?>
-            <br />
-            <h1 style="font-size:40px;">ATC management </h1>
-            <br />
-                
+                        </div>
+                         <?php } ?>
+
+                        <h1 style="font-size:40px;margin: 15px 0px;">ATC management </h1>
+               </div>
          </header>
         <section>
                 <?php echo $this->layout()->content; ?>

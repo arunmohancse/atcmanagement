@@ -42,6 +42,10 @@ section {padding: 15px;min-height: 550px; background-color: #D2E7F4;}
 .login-form{border: #52C6D8 thick double;min-width: 400px;width: 400px;-moz-border-radius: 0.4em 0.4em 0.4em 0.4em;}
 .error-page-box{min-width: 600px;padding: 10px;color:#A84ADB;font-size:32px;} 
 a{text-decoration: none;}
+/*Header content*/
+#header-content{width: 1069px; margin: 0pt auto;}
+/*View Content*/
+#view-content{width: 1069px; margin: 0pt auto;}
 
 /*Center Form*/
 #addcenter-leftblock{display:inline-block;min-width: 200px;float: left;color: #D2E7F4}
@@ -61,7 +65,7 @@ a{text-decoration: none;}
 .center-menu a:hover{background-color: #003456;}
 .center-menu label{color: #A34F4F}
 /*List center details*/
-.center-list{display: inline-block;background-color:#DEECF2; border:1px #848F96 solid; border-right: 0; border-bottom:0 }
+.center-list{display: inline-block;min-width: 1069px;background-color:#DEECF2; border:1px #848F96 solid; border-right: 0; border-bottom:0 }
 .list-head { background-color: #56B4F7;position:relative; overflow:hidden; color: #fff; font-weight: bold; text-transform: capitalize;}
 .list-head div{display:block; text-align: left; float: left; padding: 5px; border-right:1px #848F96 solid}
 .list-content{ border-bottom:1px #848F96 solid;}
