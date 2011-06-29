@@ -55,17 +55,24 @@
         </form>
     </div>
         <div id="add-category">
-            <div id="add-category-close"><img src="/images/close_button.png" width="24" id="add-category-close-button"  title="close"></div>
-            <ul>
-                <li><h2>Add a new category</h2></li>
-            </ul>
-            <label>Category Name :</label>
-            <?php echo $this->addCategoryForm->categoryName;
-                  echo $this->addCategoryForm->categoryAddButton; 
-            ?>
+            <div id="add-category-inner">
+                <div id="add-category-close"><img src="/images/close_button.png" style="cursor: pointer;" width="12" id="add-category-close-button"  title="close"></div>
+                <div style="color: #0279CE">
+                    <h2>Add a new category</h2>
+                </div>
+                <div style="display: inline-block;">
+                    <div id="add-category-formelements" style="padding: 10px 0; margin: 5px 0;display: inline-block;border-bottom: 1px solid #00AFF0;border-top: 1px solid #00AFF0; ">
+                        <label>Category Name :</label>
+                        <?php echo $this->addCategoryForm->categoryName; ?>
+                    </div>
+                    <div style="text-align: right;">
+                        <?php echo $this->addCategoryForm->categoryAddButton; ?>
+                    </div>
+               </div>
+            </div>
         </div>
         <div id="list-category">
-            <div id="list-category-close"><img src="/images/close_button.png" width="24" id="list-category-close-button"  title="close"></div>
+            <div id="list-category-close"><img src="/images/close_button.png" width="12" id="list-category-close-button"  title="close"></div>
             <div id="list-category-content">
                 <div class="list-head">
                     <div style="width: 65px;">Code</div>
