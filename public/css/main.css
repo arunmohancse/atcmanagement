@@ -73,7 +73,8 @@ a{text-decoration: none;}
 .list-content:hover{background-color:#C7E7FC;}
 #list-category{position: fixed;top:30%;right:30%;width: 350px; z-index: 1;border: 1px #848F96 solid;
                background-color: #0794ED;-moz-border-radius: 0.6em 0.6em 0.6em 0.6em; padding: 5px;}
-#list-category-close{text-align: right}
+#list-category-inner{background-color: #fff;padding: 0 0 15px 5px;}
+#list-category-close{text-align: right;}
 #list-category-content{}
 #add-category{position: fixed;top:30%;right:60%;width: 350px; z-index: 1;border: 1px #848F96 solid;
                background-color: #7C94A3; -moz-border-radius: 0.6em 0.6em 0.6em 0.6em; padding: 5px;background: rgba(0, 0, 0, 0.3);}

@@ -72,32 +72,32 @@
             </div>
         </div>
         <div id="list-category">
-            <div id="list-category-close"><img src="/images/close_button.png" width="12" id="list-category-close-button"  title="close"></div>
-            <div id="list-category-content">
-                <div class="list-head">
-                    <div style="width: 65px;">Code</div>
-                    <div style="width: 200px;">Name</div>
-                </div> 
-                <?php
-                      if($this->categoryDetails)
-                      {
-                          foreach ($this->categoryDetails AS $categoryDetail)
+            <div id="list-category-inner">
+                <div id="list-category-close"><img src="/images/close_button.png" style="cursor: pointer;" width="12" id="list-category-close-button"  title="close"></div>
+                <div id="list-category-content">
+                    <div class="list-head" >
+                        <div style="width: 65px;border : none;">Code</div>
+                        <div style="width: 200px;border : none;">Name</div>
+                    </div>
+                    <?php
+                          if($this->categoryDetails)
                           {
-                                 echo "<div class=\"list-content\">";
-                                     echo "<div style=\"width: 65px;\">".$categoryDetail['code'] . "</div>";
-                                     echo "<div style=\"width: 200px;\">".$categoryDetail['name'] . "</div>";
-                                 echo "</div>";
+                              foreach ($this->categoryDetails AS $categoryDetail)
+                              {
+                                     echo "<div class=\"list-content\" >";
+                                         echo "<div style=\"width: 65px;border : none\">".$categoryDetail['code'] . "</div>";
+                                         echo "<div style=\"width: 200px;border : none\">".$categoryDetail['name'] . "</div>";
+                                     echo "</div>";
+                              }
+
                           }
-
-                      }
-                      else{
-                           echo "There is no entry for centers";
-                      }
-               ?>   
+                          else{
+                               echo "There is no entry for centers";
+                          }
+                   ?>
+                </div>
             </div>
-        </div>    
-
-    <br />
+        </div>
     <div class="center-list">
       <div class="list-head">
           <div style="width: 65px;">atccode</div>
