@@ -182,7 +182,7 @@ class CenterController extends Zend_Controller_Action
         $centerDetails = $centers->getCenterDetails($code);
         $form = new Application_Form_Addcenter();
         $this->view->form = $form;
-        $form->atcCode->setAttrib('disabled', 'disabled');
+        $form->atcCode->setAttrib('readonly', 'readonly');
         $form->submit->setLabel('Update');
         if(!$centerDetails->toArray()){
           
@@ -248,7 +248,7 @@ class CenterController extends Zend_Controller_Action
                         }
                     }
                     else{
-                        $this->view->status = 'Something Went wrong';
+                        $this->view->status = 'Nothing Updated';
                     }
                 }
 
