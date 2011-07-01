@@ -170,11 +170,18 @@ class CenterController extends Zend_Controller_Action
             $searchResults = $center->searchCenter($query, $option);
             $this->view->searchResults = $searchResults;
             $this->view->searchQuery = $query;
+        
         }
+    }
+    public function editcenterAction()
+    {
+        
     }
 
 
 }
+
+
 
 
 
