@@ -20,6 +20,7 @@
               <div style="width: 120px;">category</div>
               <div style="width: 120px;">Registration Date</div>
               <div style="width: 120px;">Contact Numbers</div>
+              <div style="width: 30px;">Edit</div>
         </div>
         <?php
              if($this->searchResults)
@@ -36,6 +37,7 @@
                                  echo "<div style=\"width: 120px;\">".$searchResult->categoryname . "</div>";
                                  echo "<div style=\"width: 120px;\">".$searchResult->registration_date . "</div>";
                                  echo "<div style=\"width: 120px;\">".$searchResult->contact_number1 . "</div>";
+                                 echo "<div style=\"width: 30px;text-align : center\"> <a href=\"/center/editcenter/id/".$searchResult->code."\"><img src=\"/images/button_edit.png\" width=\"13\"></a></div>";
                              echo "</div>";
                  }
              }

@@ -13,9 +13,9 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
     /**
      * 
      * @param string $code to select row but it is optional, select all rows as default
-     * @return array rows 
+     * @return string select query
      */
-    public function getCenterDetails($code=NULL)
+    public function getCenterDetailsSelectQuery($code=NULL)
     {
         if($code==NULL)
         {
@@ -156,6 +156,38 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
         $rows = $this->fetchAll($select);
         //echo "<pre>"; print_r($rows);exit;
         return $rows;
+    }
+
+    /**
+     *
+     * @param string $code to select row but it is optional, select all rows as default
+     * @return array rows
+     */
+    public function getCenterDetails($code=NULL)
+    {
+        if($code==NULL)
+        {
+            $where = 1;
+        }
+        else{
+            $where = $this->getAdapter()->quoteInto('centers.code = ?',$code);
+        }
+
+        $select = $this->select()
+                       ->from('centers')
+                       ->setIntegrityCheck(false)
+                       ->join('center_category AS category','centers.category_code=category.code',array('category.name AS categoryname'))
+                       ->order('centers.code asc')
+                       ->where($where);
+        //echo $select;exit;
+        $value = $this->fetchAll($select);
+        if($value)
+        {
+            return($value);
+        }
+        else {
+               return NULL;
+        }
     }
 }
 

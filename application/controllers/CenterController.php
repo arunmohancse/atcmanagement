@@ -24,7 +24,7 @@ class CenterController extends Zend_Controller_Action
         else{
             
             $centers = new Application_Model_DbTable_Centers();
-            $centerDetails = $centers->getCenterDetails();//Getting Center details
+            $centerDetails = $centers->getCenterDetailsSelectQuery();//Getting Center details
             
             //Pagination part
             $paginator = Zend_Paginator::factory($centerDetails);
@@ -175,7 +175,83 @@ class CenterController extends Zend_Controller_Action
     }
     public function editcenterAction()
     {
-        
+        $request = $this->getRequest();
+        $code = $request->getParam('id');
+        if(!$code){ echo "there is no code"; exit;}
+        $centers = new Application_Model_DbTable_Centers();
+        $centerDetails = $centers->getCenterDetails($code);
+        $form = new Application_Form_Addcenter();
+        $this->view->form = $form;
+        if(!$centerDetails->toArray()){
+          
+        }
+        else{
+            
+            $centerCategory = new Application_Model_DbTable_Centercategory();
+            $options = $centerCategory->getCategory();
+            foreach ($options AS $option)
+            {
+                $form->atcCategoryCode->addMultioption($option['code'],$option['name']);
+            }
+            $centerDetails = $centerDetails->toArray();
+            
+            $form->atcCode->setValue($centerDetails[0]['code']);
+            $form->atcName->setValue($centerDetails[0]['name']);
+            $form->atcAddress->setValue($centerDetails[0]['address']);
+            $form->atcDistrict->setValue($centerDetails[0]['district']);
+            $form->atcState->setValue($centerDetails[0]['state']);
+            $form->atcPincode->setValue($centerDetails[0]['pincode']);
+            $form->atcContactNumber1->setValue($centerDetails[0]['contact_number1']);
+            $form->atcContactNumber2->setValue($centerDetails[0]['contact_number2']);
+            $form->atcContactNumber3->setValue($centerDetails[0]['contact_number3']);
+            $form->atcContactNumber4->setValue($centerDetails[0]['contact_number4']);
+
+            if($request->isPost())
+            {
+                if($form->isValid($request->getPost()))
+                {
+                    //Getting values from form
+                    $atcCode = $request->getPost('atcCode');
+                    $atcName = $request->getPost('atcName');
+                    $atcAddress = $request->getPost('atcAddress');
+                    $atcDistrict = $request->getPost('atcDistrict');
+                    $atcState = $request->getPost('atcState');
+                    $atcPincode = $request->getPost('atcPincode');
+                    $atcCategoryCode = $request->getPost('atcCategoryCode');
+                    $atcContactNumber1 = $request->getPost('atcContactNumber1');
+                    $atcContactNumber2 = $request->getPost('atcContactNumber2');
+                    $atcContactNumber3 = $request->getPost('atcContactNumber3');
+                    $atcContactNumber4 = $request->getPost('atcContactNumber4');
+                    $reg_day = $request->getPost('reg_day');
+                    $reg_month = $request->getPost('reg_month');
+                    $reg_year = $request->getPost('reg_year');
+                    $datearray = array('year' => $reg_year,
+                       'month' => $reg_month,
+                       'day' => $reg_day,
+                       );
+                    $date = new Zend_Date($datearray);
+                    $regDate = $date->get('yyyy-MM-dd');
+                    $center = new Application_Model_DbTable_Centers();
+                    $status = $center->addCenter($atcCode, $atcName, $atcAddress, $atcDistrict, $atcState, $atcPincode, $atcCategoryCode, $regDate,$atcContactNumber1,$atcContactNumber2,$atcContactNumber3,$atcContactNumber4);
+                    if($status)
+                     {
+                        if($status=='INVALID_PRIMARYKEY')
+                        {
+                            $this->view->status = 'Error.. Entered ATC code is already on your record..';
+                        }
+                        else
+                        {
+                            $form->reset();
+                            $this->view->success = 'Successfully added....!! ';
+                        }
+                    }
+                    else{
+                        $this->view->status = 'Something Went wrong';
+                    }
+                }
+
+            }
+        }//End else for invalid code
     }
 
 
