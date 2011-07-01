@@ -182,6 +182,7 @@ class CenterController extends Zend_Controller_Action
         $centerDetails = $centers->getCenterDetails($code);
         $form = new Application_Form_Addcenter();
         $this->view->form = $form;
+        $form->submit->setLabel('Update');
         if(!$centerDetails->toArray()){
           
         }
