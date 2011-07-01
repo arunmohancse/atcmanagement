@@ -120,9 +120,6 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
     {
         if($option==1)
         {
-            if($query==NULL)
-                  $searchCriteria = 1;
-            else
                   $searchCriteria = $this->getAdapter()->quoteInto('centers.code = ?',$query);
         }
         else

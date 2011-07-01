@@ -2,6 +2,13 @@
 
 class CenterController extends Zend_Controller_Action
 {
+    /**
+     * @name Constants declaration
+     */
+        //Initializing values for pagination(Listing center details)
+        const ITEM_COUNT_PER_PAGE = 2; //How many items will be displayed in one page
+        const SET_PAGE_RANGE = 2; //Maximum number of navigations per page eg: <previous 1 2 3 Next>
+        const PAGINATION_STYLE = 'Sliding'; //@values 'Elastic' and 'Sliding' . In order to decide which page numbers need to be displayed on screen
 
     public function init()
     {
@@ -18,8 +25,14 @@ class CenterController extends Zend_Controller_Action
             
             $centers = new Application_Model_DbTable_Centers();
             $centerDetails = $centers->getCenterDetails();//Getting Center details
-            $centerDetails = $centerDetails->toArray();
-            $this->view->centerDetails = $centerDetails;
+            
+            //Pagination part
+            $paginator = Zend_Paginator::factory($centerDetails);
+            $paginator->setCurrentPageNumber($this->_getParam("page"));
+            $paginator->setItemCountPerPage($this::ITEM_COUNT_PER_PAGE);
+            $paginator->setPageRange($this::SET_PAGE_RANGE);
+            $this->view->centerDetails = $paginator;
+            $this->view->paginationStyle = $this::PAGINATION_STYLE;
             
             $centerCategory = new Application_Model_DbTable_Centercategory();
             $categoryDetails = $centerCategory->getCategory();//Getting Category List
@@ -30,7 +43,7 @@ class CenterController extends Zend_Controller_Action
 
             $Searchcenter = new Application_Form_Searchcenter();
             $this->view->Searchcenter = $Searchcenter;
-            
+           
         }//End else
         
     }

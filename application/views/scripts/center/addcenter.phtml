@@ -1,7 +1,10 @@
 <head>
     <script type="text/javascript">
         $(document).ready(function(){
-           // $('#error-status').hide(90000);
+            $('#submit').click(function(){
+                var code = $('#atcCode').val();
+                if(code==''){ alert('Please enter atccode'); return (0); }
+            })
             $('#success-status').fadeOut(90000);
             $('#atcCode').click(function(){
                 $('#error-status').hide('fast');

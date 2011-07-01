@@ -94,4 +94,7 @@ a{text-decoration: none;}
     min-width: 68px;padding: 2px 7px;-moz-border-radius: 5px 5px 5px 5px;}
 
 
+#backgroundPopup {background: none repeat scroll 0 0 #111111;border: 1px solid #CECECE;left: 0;position: fixed;top: 0;
+    width: 100%;z-index: 1;height: 500px;opacity : 0.3;
+}
 

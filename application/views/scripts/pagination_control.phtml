@@ -2,17 +2,17 @@
 <div class="paginationControl">
 <!-- Previous page link -->
 <?php if (isset($this->previous)): ?>
-<a href="<?= $this->url(array('page' => $this->previous)); ?>">&lt; Previous</a> |
+<a href="<?= $this->url(array('page' => $this->previous)); ?>">&lt; Previous</a> 
 <?php else: ?>
-<span class="disabled">&lt; Previous</span> |
+<span class="disabled">&lt; Previous</span>
 <?php endif; ?>
 
 <!-- Numbered page links -->
 <?php foreach ($this->pagesInRange as $page): ?>
 <?php if ($page != $this->current): ?>
-<a href="<?= $this->url(array('page' => $page)); ?>"><?= $page; ?></a> |
+<a href="<?= $this->url(array('page' => $page)); ?>"><?= $page;  ?></a>&nbsp;
 <?php else: ?>
-<?= $page; ?> |
+<?php echo $page; ?>&nbsp;
 <?php endif; ?>
 <?php endforeach; ?>
 

@@ -2,24 +2,37 @@
     <script type="text/javascript">
         $(document).ready(function(){
             /**
+             *@description Determining the size of window
+             */
+            var windowWidth = document.documentElement.clientWidth;
+	    var windowHeight = document.documentElement.clientHeight;
+            /**
              *@Description Hide and show the Listcategory div
              */
             $('#list-category').hide();
+            $('#backgroundPopup').hide();
             $('#list-category-button').click(function(){
+                $("#backgroundPopup").height(windowHeight);
+                $('#backgroundPopup').fadeIn('slow');
                 $('#list-category').fadeIn('slow');
             })
             $('#list-category-close-button').click(function(){
                     $('#list-category').fadeOut('slow');
+                    $('#backgroundPopup').fadeOut('slow');
             })
             /**
              *@Description Hide and show the Addcategory div
              */
             $('#add-category').hide();
             $('#add-category-button').click(function(){
+                
+	        $("#backgroundPopup").height(windowHeight);
+                $('#backgroundPopup').fadeIn('slow');
                 $('#add-category').fadeIn('slow');
             })
             $('#add-category-close-button').click(function(){
                     $('#add-category').fadeOut('slow');
+                    $('#backgroundPopup').fadeOut('slow');
             })
             
             /**
@@ -54,6 +67,7 @@
             <?php echo $this->Searchcenter->centerSearchsubmit; ?>
         </form>
     </div>
+        <div id="backgroundPopup"></div>
         <div id="add-category">
             <div id="add-category-inner">
                 <div id="add-category-close"><img src="/images/close_button.png" style="cursor: pointer;" width="12" id="add-category-close-button"  title="close"></div>
@@ -133,7 +147,9 @@
               else{
                    echo "There is no entry for centers";
               }
+             
           ?>
        
     </div>
+        <?php  echo "<div style=\"background-color : WHITE;float : right;\">" . $this->paginationControl($this->centerDetails, $this->paginationStyle, 'pagination_control.phtml') . "</div>"; ?>
 </div>
