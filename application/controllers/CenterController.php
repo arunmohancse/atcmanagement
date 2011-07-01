@@ -6,7 +6,7 @@ class CenterController extends Zend_Controller_Action
      * @name Constants declaration
      */
         //Initializing values for pagination(Listing center details)
-        const ITEM_COUNT_PER_PAGE = 2; //How many items will be displayed in one page
+        const ITEM_COUNT_PER_PAGE = 10; //How many items will be displayed in one page
         const SET_PAGE_RANGE = 2; //Maximum number of navigations per page eg: <previous 1 2 3 Next>
         const PAGINATION_STYLE = 'Sliding'; //@values 'Elastic' and 'Sliding' . In order to decide which page numbers need to be displayed on screen
 
@@ -196,7 +196,7 @@ class CenterController extends Zend_Controller_Action
                 $form->atcCategoryCode->addMultioption($option['code'],$option['name']);
             }
             $centerDetails = $centerDetails->toArray();
-            
+            //print_r($centerDetails);exit;
             $form->atcCode->setValue($centerDetails[0]['code']);
             $form->atcName->setValue($centerDetails[0]['name']);
             $form->atcAddress->setValue($centerDetails[0]['address']);
@@ -207,7 +207,12 @@ class CenterController extends Zend_Controller_Action
             $form->atcContactNumber2->setValue($centerDetails[0]['contact_number2']);
             $form->atcContactNumber3->setValue($centerDetails[0]['contact_number3']);
             $form->atcContactNumber4->setValue($centerDetails[0]['contact_number4']);
-
+            $form->atcCategoryCode->setValue($centerDetails[0]['categorycode'],$centerDetails[0]['categoryname']);
+            $date = new Zend_Date($centerDetails[0]['registration_date'],'yyyy-MM-dd');
+//            echo $date->toString('yyyy') .'&nbsp;';
+//            echo $date->toString('MM').'&nbsp;';
+//            echo $date->toString('dd').'&nbsp;';exit;
+//            $form->atcCode->setValue($centerDetails[0]['code']);
             if($request->isPost())
             {
                 if($form->isValid($request->getPost()))

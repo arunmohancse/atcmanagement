@@ -176,7 +176,7 @@ class Application_Model_DbTable_Centers extends Zend_Db_Table_Abstract
         $select = $this->select()
                        ->from('centers')
                        ->setIntegrityCheck(false)
-                       ->join('center_category AS category','centers.category_code=category.code',array('category.name AS categoryname'))
+                       ->join('center_category AS category','centers.category_code=category.code',array('category.code AS categorycode','category.name AS categoryname'))
                        ->order('centers.code asc')
                        ->where($where);
         //echo $select;exit;
