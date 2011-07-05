@@ -22,7 +22,7 @@ class HomeController extends Zend_Controller_Action
             $remainderDate =  $date->toString('yyyy-MM-dd');
             $centers = new Application_Model_DbTable_Centers();
             $remainderDetails = $centers->remainderForRegistration($remainderDate);
-            $this->view->remainderDetails = $remainderDetails;
+           // $this->view->remainderDetails = $remainderDetails;
         }
     }
 }
