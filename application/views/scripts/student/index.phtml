@@ -1,4 +1,135 @@
-<br /><br />
+
+<head>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /**
+             *@description Determining the size of window
+             */
+            var windowWidth = document.documentElement.clientWidth;
+	    var windowHeight = document.documentElement.clientHeight;
+            /**
+             *@Description Hide and show the Listcategory div
+             */
+            $('#list-category').hide();
+            $('#backgroundPopup').hide();
+            $('#list-category-button').click(function(){
+                $("#backgroundPopup").height(windowHeight);
+                $('#backgroundPopup').fadeIn('slow');
+                $('#list-category').fadeIn('slow');
+            })
+            $('#list-category-close-button').click(function(){
+                    $('#list-category').fadeOut('slow');
+                    $('#backgroundPopup').fadeOut('slow');
+            })
+            /**
+             *@Description Hide and show the Addcategory div
+             */
+            $('#add-category').hide();
+            $('#add-category-button').click(function(){
+
+	        $("#backgroundPopup").height(windowHeight);
+                $('#backgroundPopup').fadeIn('slow');
+                $('#add-category').fadeIn('slow');
+            })
+            $('#add-category-close-button').click(function(){
+                    $('#add-category').fadeOut('slow');
+                    $('#backgroundPopup').fadeOut('slow');
+            })
+
+            /**
+             *@Description it will add category details
+             *@param string $categoryname
+             */
+            $('#categoryAddButton').click(function(){
+               var categoryName = $('#categoryName').val();
+               if(categoryName==''){ alert('Name Field is Empty'); return(0); }
+                     $.ajax({
+                            type: "POST",
+                            url: "/center/ajaxaddcategory",
+                            data: "categoryName="+categoryName,
+                            success: function(msg){
+                              alert(msg);
+                            }
+                     });
+             });
+        });
+    </script>
+</head>
 <div id="view-content">
-	<p>View script for controller <b>Student</b> and script/action name <b>index</b></p>
-</div>
+    <div class="center-menu">
+        <a href="/student/addstud"  title="Click here to add new student">Add a new student</a>
+   </div>
+    <div class="search-box">
+        <form action="/student/searchstud" method="POST">
+            <label>Search Here :</label><input type="textbox" name="query">
+            <label>Criteria : </label>
+            <select name="criteria">
+<option value="register_no">regno</option>
+<option value="name">Name</option>
+            </select><br/><input type="submit" value="Search">
+        </form>
+    </div>
+        <div id="backgroundPopup"></div>
+        <div id="add-category">
+            <div id="add-category-inner">
+                <div id="add-category-close"><img src="/images/close_button.png" style="cursor: pointer;" width="12" id="add-category-close-button"  title="close"></div>
+                <div style="color: #0279CE">
+                    <h2>Add a new category</h2>
+                </div>
+                <div style="display: inline-block;">
+                    <div id="add-category-formelements" style="padding: 10px 0; margin: 5px 0;display: inline-block;border-bottom: 1px solid #00AFF0;border-top: 1px solid #00AFF0; ">
+                        <label>Category Name :</label>
+                    </div>
+                    <div style="text-align: right;">
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div id="list-category">
+            <div id="list-category-inner">
+                <div id="list-category-close"><img src="/images/close_button.png" style="cursor: pointer;" width="12" id="list-category-close-button"  title="close"></div>
+                <div id="list-category-content">
+                    <div class="list-head" >
+                        <div style="width: 65px;border : none;">Code</div>
+                        <div style="width: 200px;border : none;">Name</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    <div class="center-list">
+      <div class="list-head">
+          <div style="width: 100px;">RegisterNo</div>
+          <div style="width: 100px;">Name</div>
+          <div style="width: 100px;">Sex</div>
+          <div style="width: 100px;">ATC-Code</div>
+          <div style="width: 100px;">District</div>
+          <div style="width: 100px;">Course-Code</div>
+          <div style="width: 100px;">Date-Of-Join</div>
+      </div>
+
+	  <?php
+              if($this->stud_list)
+              {
+                  foreach ($this->stud_list AS $sortedDetail)
+                  {
+                         echo "<div class=\"list-content\">";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['register_no'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['name'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['sex'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['atc_code'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['district'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['course_code'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['date_of_join'] . "</div>";
+
+                  }
+
+              }
+              else{
+                   echo "There is no Student Enries found";
+              }
+
+          ?>
+
+    </div>
+    </div>

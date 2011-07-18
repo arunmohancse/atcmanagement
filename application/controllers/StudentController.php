@@ -11,15 +11,21 @@ class StudentController extends Zend_Controller_Action
     public function indexAction()
     {
        $list_details=new Application_Model_DbTable_Students();
-       $list_details->listStudents();
+       $stud_details=$list_details->listStudents();
+       $this->view->stud_list=$stud_details;
     }
 
     public function sortstudAction()
     {
+        if(!Zend_Auth::getInstance()->hasIdentity())
+        {
+            $this->_helper->redirector('Index','index');
+        }
+        $order=$_POST["order"];
+        $sort_by=$_POST["sortby"];
         $sortstud=new Application_Model_DbTable_Students();
-        $order='ASC';
-        $sort_by='name';
         $sorted_list=$sortstud->sortStudents($sort_by,$order);
+        $this->view->sorted_list=$sorted_list;
     }
 
     public function addstudAction()
@@ -106,6 +112,15 @@ class StudentController extends Zend_Controller_Action
 
     }
 
+
+    public function  searchstudAction()
+    {
+        $criteria=$_POST["criteria"];
+        $query=$_POST["query"];
+        $search_stud= new Application_Model_DbTable_Students();
+        $search_res=$search_stud->searchStudent($query,$criteria);
+        $this->view->search_res=$search_res;
+    }
 
 }
 
