@@ -1,0 +1,34 @@
+
+<div class="center-list">
+      <div class="list-head">
+          <div style="width: 100px;">RegisterNo</div>
+          <div style="width: 100px;">Name</div>
+          <div style="width: 100px;">Sex</div>
+          <div style="width: 100px;">ATC-Code</div>
+          <div style="width: 100px;">District</div>
+          <div style="width: 100px;">Course-Code</div>
+          <div style="width: 100px;">Date-Of-Join</div>
+      </div>
+
+	  <?php
+              if($this->search_res)
+              {
+                  foreach ($this->search_res AS $sortedDetail)
+                  {
+                         echo "<div class=\"list-content\">";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['register_no'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['name'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['sex'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['atc_code'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['district'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['course_code'] . "</div>";
+                             echo "<div style=\"width: 100px;\">".$sortedDetail['date_of_join'] . "</div>";
+
+                  }
+
+              }
+              else{
+                   echo "There is no Student Enries found";
+              }
+?>
+</div>

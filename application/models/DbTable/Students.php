@@ -40,7 +40,10 @@ class Application_Model_DbTable_Students extends Zend_Db_Table_Abstract
         $list = $this->fetchAll($select);
         if($list)
         {
-            return $list;
+            //echo '<pre>';
+            //print_r($list);
+            //exit;
+           return $list;
         }
         else {
                 return NULL;
@@ -61,12 +64,9 @@ class Application_Model_DbTable_Students extends Zend_Db_Table_Abstract
         $select = $this->select()
                 ->from('students')
                 ->order($order_by);
-        echo $select;
-        //exit;
         $list = $this->fetchAll($select);
         if($list)
         {
-           
             return $list;
         }
         else {
@@ -101,5 +101,29 @@ class Application_Model_DbTable_Students extends Zend_Db_Table_Abstract
             return NULL;
     }
 
+     /*Allow administrator to search student details via query string
+     * @param type
+     * $query :- query string.
+     * $criteria :- criteria on which search has to be done
+     * return value $row
+     */
+
+    public function searchStudent($query,$criteria)
+    {
+        $cond=$criteria .' like '.'\''.$query.'%' .'\'';
+        $select=$this->select()
+                ->from('students')
+                ->where($cond);
+        $row=$this->fetchAll($select);
+        if($row)
+        {
+            return $row->toArray();
+        }
+        else
+            return NULL;
+    }
+
 }
+
+
 
